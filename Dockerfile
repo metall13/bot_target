@@ -4,10 +4,10 @@ FROM golang:latest AS builder
 COPY . /app
 
 # Установка рабочей директории
-WORKDIR /app/cmd
+WORKDIR app/cmd
 
 # Компиляция приложения
-RUN go build -o /cmd/main .
+RUN go build -o /main .
 
 # Контейнер для запуска
 FROM golang:latest

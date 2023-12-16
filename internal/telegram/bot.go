@@ -22,15 +22,7 @@ func StartTelegramBot(api string, db *sqlx.DB) {
 
 	bot.Handle(tele.OnText, func(c tele.Context) error {
 		var infoTarget string
-		//lenText := strings.Count(c.Text(), "") - 1
-		//switch {
-		//case c.Text()[0:1] == "7" && len(c.Text()) == 11:
-		//	infoTarget = GetTargetInfoToPhone(c.Text(), db)
-		//case lenText == 9 || lenText == 8:
-		//	infoTarget, _ = GetTargetAvtoToGosNomer(c.Text(), db)
-		//default:
-		//	infoTarget = "Мы не поняли что вы нам прислали. Номер телефона в формате 79109999999 или номер авто а111пр11"
-		//}
+
 		typeData, data := IdentifyData(c.Text())
 		switch {
 		case typeData == "Номер сотового телефона":
