@@ -72,8 +72,8 @@ func GetTargetName(phoneNumber string, db *sqlx.DB) (string, error) {
 	UNION ALL SELECT rfcont_name from public.rfcont_full where phone_number = $1
 	UNION ALL SELECT sushi_name from public.sushi_full where phone_number = $1
 	UNION ALL SELECT vk_first_name  from public.vk_full where phone_number = $1
-	UNION ALL SELECT wildberries_name from public.wildberries_full where phone_number = $1
-	UNION ALL SELECT fio from public.gipdd_nn_2020 where phone_number = $1`
+	UNION ALL SELECT wildberries_name from public.wildberries_full where phone_number = $1`
+	//UNION ALL SELECT fio from public.gipdd_nn_2020 where phone_number = $1
 
 	queryAnswer := "Предпологаемое имя: "
 	//Counting number of users
@@ -107,7 +107,7 @@ func GetTargetAdres(phoneNumber string, db *sqlx.DB) (string, error) {
 	UNION ALL SELECT vk_first_name || ' ' || vk_last_name from public.vk_full where phone_number = $1
 	UNION ALL SELECT wildberries_address from public.wildberries_full where phone_number = $1
 	UNION ALL SELECT yandex_address_city || ' ' ||yandex_address_street|| ' ' ||yandex_address_house from public.yandex_full where phone_number = $1
-	UNION ALL SELECT address from public.gipdd_nn_2020 where phone_number = $1
+	--UNION ALL SELECT address from public.gipdd_nn_2020 where phone_number = $1
 	UNION ALL SELECT address_city || ' ' || actual_address from public.delivery_full where mobile_phone = $1`
 
 	var target string

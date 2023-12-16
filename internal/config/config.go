@@ -8,12 +8,12 @@ import (
 )
 
 type Tg struct {
-	Api_key string `default:"1223290995:AAEn153qCQIHQpLBHtnIBF-woPd0Sx1UpCY" env:"TOKEN" flag:"api_key"`
+	Api_key string `default:"1155763164:AAFfDGqNcjMCSntZiorkla8mYlgiifr6zHk" env:"TOKEN" flag:"api_key"`
 }
 
 type Postgres struct {
 	UrlDB      string `default:"postgres://postgres:postgres@localhost/postgres?sslmode=disable" env:"URlDB" `
-	URlDBDEBAG string `default:"postgres://postgres:postgres@192.168.0.200:5432/postgres?sslmode=disable" env:"URlDBDEBAG" `
+	URlDBDEBAG string `default:"postgres://postgres:postgres@192.168.0.200:5400/postgres?sslmode=disable" env:"URlDBDEBAG" `
 }
 
 type Config struct {
